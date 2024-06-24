@@ -1,0 +1,61 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/easyplan
+    username: root
+    password: 1q2w3e4r
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        open-in-view: false
+
+    hibernate:
+      ddl-auto: create
+
+    generate-ddl: true
+
+  profiles:
+    active: local
+    include: oauth
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 123@gmail.com
+    password: 1234
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+
+jwt:
+  header:
+    Authorization
+  secret:
+    c2Vva3llb25nLW5pdmVyc2l0eS1jbG91ZC1iYWNrZW5kLWNsYXNzLXRlYW0tcHJvamVjdC1lYXN5LXBsYW4tc2VjcmV0LWtleQ==
+  token-validity-in-seconds:
+    86400
+
+  file:
+    upload-dir: "C:/hss/upload"
+    web-dir: "/uploads/"
+
+
+    servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+
+openai:
+    api:
+      key: ENC(E9RXbIxxTopEZFWW4oY9lrE3cOtpGu0ktWyO/GuJuInjpNPqSeZgpbX5iJ7wutOc6Bm2HOM6IdRoNafnzCU1cvO40Ye5lmFZ)
+      url: https://api.openai.com/v1/chat/completions
+    model: gpt-4o
