@@ -14,6 +14,7 @@ public class EasyPlanApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EasyPlanApplication.class, args);
+
     }
 
 }
